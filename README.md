@@ -32,6 +32,12 @@ with page-number citations — not the model's general knowledge.
 - Toast notifications for upload errors/success (file-type/size validation)
 - App-crash error boundary with a recoverable "reload" screen instead of a blank
   page
+- Light/dark theme toggle (topbar sun/moon icon), persisted to `localStorage`,
+  no flash of the wrong theme on load
+- Fully responsive — below 900px the sidebar becomes an off-canvas drawer
+  (hamburger toggle + backdrop), auto-closing when you pick a document
+- Smooth animations throughout — message/document entrance, drawer slide,
+  theme cross-fade, icon-button press feedback
 - Fully local retrieval — no external API calls or cost for embeddings; only the
   final answer-generation call goes to a hosted LLM (Groq)
 
@@ -39,7 +45,7 @@ with page-number citations — not the model's general knowledge.
 
 **Frontend**
 - [Next.js](https://nextjs.org) 16 (App Router) + React 19
-- Plain CSS (custom properties / dark theme, no framework)
+- Plain CSS (custom properties, light + dark theme, no framework)
 - Native `fetch` for API calls — no axios/SWR/React Query
 
 **Backend**
@@ -202,11 +208,11 @@ backend/
 
 frontend/
   app/
-    layout.js              root layout — wraps the app in ErrorBoundary + ToastProvider
-    page.js                 main page — composes Sidebar / ChatArea / InputBar
-    globals.css             design tokens (CSS vars) + all component styles
+    layout.js              root layout — theme-init script, ErrorBoundary, ThemeProvider, ToastProvider
+    page.js                 main page — composes Sidebar / ChatArea / InputBar, owns mobile drawer state
+    globals.css             design tokens (light + dark CSS vars), responsive breakpoints, animations
   components/
-    Sidebar.jsx              logo, upload zone, document list
+    Sidebar.jsx              logo, upload zone, document list — also the mobile drawer
     UploadZone.jsx            drag/drop + click-to-upload, client-side type/size validation
     DocItem.jsx                single document row (select / remove)
     ChatArea.jsx               message list + auto-scroll + typing indicator
@@ -214,15 +220,23 @@ frontend/
     SourceCard.jsx              one retrieved excerpt (page badge + text)
     WelcomeScreen.jsx           empty-state instructions
     InputBar.jsx                textarea (auto-resize) + send button
-    Icons.jsx                   shared inline SVG icons
+    Icons.jsx                   shared inline SVG icons (brain, send, upload, file, x, chevron, sun, moon, menu)
     ErrorBoundary.jsx           class component, catches render crashes
   context/
     ToastContext.jsx           toast notification provider/hook
+    ThemeContext.jsx            light/dark theme provider/hook, persists to localStorage
   hooks/
     useDocuments.js             upload/select/remove document state + validation
     useChat.js                   message state, sends questions, scoped to active doc
   services/
     api.js                      uploadPDF() / askQuestion() — the only two fetch calls in the app
+
+docs/
+  Overview.md, Architecture.md, Backend.md, RAG Pipeline.md, Frontend.md,
+  API Reference.md, Environment Variables.md, Troubleshooting.md
+  — an Obsidian-ready vault of interlinked notes (open docs/ as a vault, or
+  add it to an existing one). This is the deep-dive technical reference;
+  this README stays focused on setup and quick reference.
 ```
 
 ## RAG pipeline internals
