@@ -1,10 +1,12 @@
-import Sidebar from './components/Sidebar';
-import ChatArea from './components/ChatArea';
-import InputBar from './components/InputBar';
-import { useDocuments } from './hooks/useDocuments';
-import { useChat } from './hooks/useChat';
+"use client";
 
-export default function App() {
+import Sidebar from "../components/Sidebar";
+import ChatArea from "../components/ChatArea";
+import InputBar from "../components/InputBar";
+import { useDocuments } from "../hooks/useDocuments";
+import { useChat } from "../hooks/useChat";
+
+export default function Home() {
   const docs = useDocuments();
   const chat = useChat(docs.activeDoc);
 

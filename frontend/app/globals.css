@@ -22,15 +22,13 @@
   --radius-lg:  16px;
 }
 
-body {
+html, body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
   color: var(--text);
   height: 100vh;
   overflow: hidden;
 }
-
-#root { height: 100vh; }
 
 /* ── LAYOUT ── */
 .app   { display: flex; height: 100vh; overflow: hidden; }
@@ -208,6 +206,7 @@ body {
 .msg-bubble {
   padding: 13px 16px; border-radius: 12px;
   font-size: 14px; line-height: 1.75;
+  white-space: pre-wrap;
 }
 .msg.user .msg-bubble {
   background: var(--blue-dim);
@@ -309,6 +308,40 @@ body {
 /* ── CHEVRON ── */
 .chevron { transition: transform 0.2s; }
 .chevron.open { transform: rotate(180deg); }
+
+/* ── CRASH SCREEN ── */
+.crash-screen {
+  height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 12px;
+  text-align: center; padding: 20px; color: var(--text);
+}
+.crash-screen h2 { font-size: 20px; }
+.crash-screen p  { color: var(--text-muted); font-size: 13px; max-width: 420px; }
+.crash-screen button {
+  margin-top: 8px; padding: 8px 18px; border-radius: 8px;
+  background: var(--blue); color: #0D1117; border: none;
+  font-size: 13px; font-weight: 600; cursor: pointer;
+}
+
+/* ── TOAST ── */
+.toast-container {
+  position: fixed; bottom: 20px; right: 20px;
+  display: flex; flex-direction: column; gap: 8px;
+  z-index: 1000;
+}
+.toast {
+  padding: 12px 16px; border-radius: 10px;
+  font-size: 13px; max-width: 320px; cursor: pointer;
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--text); box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  animation: toast-in 0.2s ease-out;
+}
+.toast-error   { border-color: rgba(248,81,73,0.35); }
+.toast-success { border-color: rgba(63,185,80,0.35); }
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
 /* ── SCROLLBAR ── */
 ::-webkit-scrollbar       { width: 4px; }
