@@ -1,4 +1,5 @@
 # PaperMind AI
+
 <div align="center">
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
@@ -10,7 +11,9 @@
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 ![Status](https://img.shields.io/badge/status-active-success.svg)
----
+
+</div>
+
 A retrieval-augmented Q&A tool for research papers. Upload a PDF, ask questions
 about it in plain English, and get answers grounded in the actual document text,
 with page-number citations — not the model's general knowledge.
