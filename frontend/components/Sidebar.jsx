@@ -2,15 +2,20 @@ import UploadZone from "./UploadZone";
 import DocItem from "./DocItem";
 import { IconBrain } from "./Icons";
 
-export default function Sidebar({ docs }) {
+export default function Sidebar({ docs, isOpen, onClose }) {
   const {
     documents, activeDoc,
     isUploading, uploadName,
     handleUpload, removeDoc, switchDoc,
   } = docs;
 
+  function selectDoc(doc) {
+    switchDoc(doc);
+    onClose?.();
+  }
+
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar${isOpen ? " open" : ""}`}>
       <div className="sidebar-header">
         <div className="logo">
           <div className="logo-icon"><IconBrain size={22} /></div>
@@ -38,7 +43,7 @@ export default function Sidebar({ docs }) {
               key={doc.id}
               doc={doc}
               isActive={activeDoc?.id === doc.id}
-              onClick={() => switchDoc(doc)}
+              onClick={() => selectDoc(doc)}
               onRemove={() => removeDoc(doc.id)}
             />
           ))
