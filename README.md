@@ -30,6 +30,24 @@ with page-number citations — not the model's general knowledge.
 
 ### Working Example 2
 ![Working Example 2](frontend/app/pics/working2.png)
+
+### Home Light Theme
+![Home Light Theme](frontend/app/pics/home_light.png)
+
+### Working Light Theme
+![Working Light Theme](frontend/app/pics/working_light.png)
+
+### Responsiveness Dark 1
+![Responsiveness Dark 1](frontend/app/pics/responsivesness_dark_1.png)
+
+### Responsiveness Dark 2
+![Responsiveness Dark 2](frontend/app/pics/responsiveness_dark_2.png)
+
+### Responsiveness Light 1
+![Responsiveness Light 1](frontend/app/pics/responsiveness_light_1.png)
+
+### Responsiveness Light 2
+![Responsiveness Light 2](frontend/app/pics/resposniveeness_light_2.png)
 ## Features
 
 - Drag-and-drop or click-to-upload PDF ingestion (25MB max)
