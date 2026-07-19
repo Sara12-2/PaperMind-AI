@@ -19,6 +19,17 @@ with page-number citations — not the model's general knowledge.
 - [Troubleshooting](#troubleshooting)
 - [Security notes](#security-notes)
 
+---
+## Screenshots
+
+### Home Page
+![Home Page](frontend/app/pics/Home.png)
+
+### Working Example 1
+![Working Example 1](frontend/app/pics/working-1.png)
+
+### Working Example 2
+![Working Example 2](frontend/app/pics/working2.png)
 ## Features
 
 - Drag-and-drop or click-to-upload PDF ingestion (25MB max)
