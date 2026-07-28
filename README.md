@@ -1,5 +1,19 @@
 # PaperMind AI
 
+<div align="center">
+
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
+![Node](https://img.shields.io/badge/node-18+-green.svg)
+![Next.js](https://img.shields.io/badge/Next.js-16-black.svg)
+![Flask](https://img.shields.io/badge/Flask-3.0-blue.svg)
+![Groq](https://img.shields.io/badge/Groq-API-orange.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+![Status](https://img.shields.io/badge/status-active-success.svg)
+
+</div>
+
 A retrieval-augmented Q&A tool for research papers. Upload a PDF, ask questions
 about it in plain English, and get answers grounded in the actual document text,
 with page-number citations — not the model's general knowledge.
@@ -30,6 +44,24 @@ with page-number citations — not the model's general knowledge.
 
 ### Working Example 2
 ![Working Example 2](frontend/app/pics/working2.png)
+
+### Home Light Theme
+![Home Light Theme](frontend/app/pics/home_light.png)
+
+### Working Light Theme
+![Working Light Theme](frontend/app/pics/working_light.png)
+
+### Responsiveness Dark 1
+![Responsiveness Dark 1](frontend/app/pics/responsivesness_dark_1.png)
+
+### Responsiveness Dark 2
+![Responsiveness Dark 2](frontend/app/pics/responsiveness_dark_2.png)
+
+### Responsiveness Light 1
+![Responsiveness Light 1](frontend/app/pics/responsiveness_light_1.png)
+
+### Responsiveness Light 2
+![Responsiveness Light 2](frontend/app/pics/resposniveeness_light_2.png)
 ## Features
 
 - Drag-and-drop or click-to-upload PDF ingestion (25MB max)
